@@ -1,0 +1,17 @@
+.articleCard {
+  width: 30em;
+  margin-left: 23em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  border: 1px solid black;
+  display: grid;
+  grid-template: 2fr / 3fr 3fr;
+  color: whitesmoke;
+  box-shadow: 0.1px 0.1px 3px 4px whitesmoke;
+  border-radius: 20px;
+}
+
+.article_title {
+  color: #ff9900;
+}
