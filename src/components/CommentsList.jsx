@@ -4,8 +4,7 @@ import CommentCard from './CommentCard';
 
 class CommentsList extends Component {
   state = {
-    comments: [],
-    isLoading: true
+    comments: []
   };
 
   componentDidMount() {
@@ -19,11 +18,7 @@ class CommentsList extends Component {
   }
 
   render() {
-    const { comments, isLoading } = this.state;
-
-    if (isLoading) {
-      return <p>Loading comments...</p>;
-    }
+    const { comments } = this.state;
 
     return (
       <div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { fetchArticleById } from '../api';
 import './ArticleCard.css';
 import CommentsList from './CommentsList';
+import Toggler from './Toggler';
 
 class SingleArticle extends Component {
   state = {
@@ -48,7 +49,9 @@ class SingleArticle extends Component {
         <p>Posted by: {article.author}</p>
         <p>Date: {article.created_at}</p>
         <p>Comments: {article.comment_count}</p>
-        <CommentsList articleId={article.article_id} />
+        <Toggler>
+          <CommentsList articleId={article.article_id} />
+        </Toggler>
       </div>
     );
   }
