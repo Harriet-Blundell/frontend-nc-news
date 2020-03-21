@@ -6,13 +6,15 @@ const SortArticles = props => {
     <div className="sort_by_container">
       <form>
         <label htmlFor="sort_by">
+          {' '}
+          Sort By:
           <select
             onChange={props.handleChange}
             name="sort_by"
             className="sort_by_button"
           >
             <option selected disabled>
-              Sort By:
+              Choose
             </option>
             <option value="created_at">Date</option>
             <option value="comment_count">Comments</option>

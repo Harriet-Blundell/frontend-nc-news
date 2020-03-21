@@ -3,18 +3,21 @@ import { fetchAllArticles } from '../api';
 import ArticleCard from './ArticleCard';
 import './ArticleCard.css';
 import SortBy from './SortBy';
+import Order from './Order';
 
 class ArticlesList extends Component {
   state = {
     articles: [],
     sort_by: '',
+    order: '',
     isLoading: true
   };
 
   componentDidMount() {
     fetchAllArticles({
       topic: this.props.slug,
-      sort_by: this.state.sort_by
+      sort_by: this.state.sort_by,
+      order: this.state.order
     }).then(({ articles }) => {
       this.setState({
         articles: articles,
@@ -31,10 +34,14 @@ class ArticlesList extends Component {
   };
 
   componentDidUpdate(prevProp, prevState) {
-    if (prevState.sort_by !== this.state.sort_by) {
+    if (
+      prevState.sort_by !== this.state.sort_by ||
+      prevState.order !== this.state.order
+    ) {
       fetchAllArticles({
         topic: this.props.slug,
-        sort_by: this.state.sort_by
+        sort_by: this.state.sort_by,
+        order: this.state.order
       }).then(({ articles }) => {
         this.setState({
           articles: articles,
@@ -54,6 +61,7 @@ class ArticlesList extends Component {
     return (
       <div>
         <SortBy handleChange={this.handleChange} />
+        <Order handleChange={this.handleChange} />
         <h2>Articles:</h2>
         <ul>
           {articles.map(article => {

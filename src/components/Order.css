@@ -1,4 +1,4 @@
-.sort_by_button {
+.order_button {
   display: inline-block;
   font-size: 14px;
   font-family: sans-serif;
@@ -15,8 +15,4 @@
   outline: none;
   margin-top: 1%;
   margin-left: 0.5%;
-}
-
-.sort_by_button:hover {
-  border-color: #888;
 }
