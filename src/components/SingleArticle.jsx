@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fetchArticleById } from '../api';
+import './ArticleCard.css';
 
 class SingleArticle extends Component {
   state = {
@@ -9,7 +10,6 @@ class SingleArticle extends Component {
 
   componentDidMount() {
     fetchArticleById(this.props.id).then(({ article }) => {
-      console.log(article, 'in single article component');
       this.setState({
         article: article,
         isLoading: false
@@ -36,11 +36,12 @@ class SingleArticle extends Component {
     }
 
     return (
-      <div>
+      <div className="singleArticleById">
         <h2>Article:</h2>
 
         <h3>{article.title}</h3>
-        <p>General Information: {article.body}</p>
+        <p className="singleArticle_generalinfo">General Information:</p>
+        {article.body}
         <p>Votes: {article.votes}</p>
         <p>Topic: {article.topic}</p>
         <p>Posted by: {article.author}</p>

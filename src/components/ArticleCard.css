@@ -17,3 +17,20 @@
 .article_list {
   list-style: none;
 }
+
+.singleArticleById {
+  width: 30em;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 20px;
+  text-align: center;
+  display: grid;
+  width: 80%;
+  color: black;
+  box-shadow: 0.1px 0.1px 3px 4px whitesmoke;
+  background-color: whitesmoke;
+}
+
+.singleArticle_generalinfo {
+  font-weight: bold;
+}
