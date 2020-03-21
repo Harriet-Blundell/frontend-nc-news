@@ -1,14 +1,18 @@
 import React from 'react';
+import './SortBy.css';
 
 const SortArticles = props => {
   return (
-    <div>
-      <p>Sort By: </p>
+    <div className="sort_by_container">
       <form>
         <label htmlFor="sort_by">
-          <select onChange={props.handleChange} name="sort_by">
+          <select
+            onChange={props.handleChange}
+            name="sort_by"
+            className="sort_by_button"
+          >
             <option selected disabled>
-              Choose:
+              Sort By:
             </option>
             <option value="created_at">Date</option>
             <option value="comment_count">Comments</option>
