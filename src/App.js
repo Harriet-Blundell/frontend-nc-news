@@ -27,7 +27,7 @@ class App extends React.Component {
           <TopicsList path="/topics" />
           <ArticlesList path="/topics/:slug" />
           <ArticlesList path="/articles" />
-          <SingleArticle path="/articles/:id" />
+          <SingleArticle path="/articles/:id" username={this.state.username} />
         </Router>
       </div>
     );

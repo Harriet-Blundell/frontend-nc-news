@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { fetchCommentsByArticleId } from '../api';
 import CommentCard from './CommentCard';
+import PostComment from './PostComment';
+import { postCommentById } from '../api';
 
 class CommentsList extends Component {
   state = {
@@ -17,11 +19,27 @@ class CommentsList extends Component {
     });
   }
 
+  postNewComment = newComment => {
+    const { articleId } = this.props;
+
+    postCommentById(articleId, newComment).then(({ comment }) => {
+      this.setState(currentState => {
+        return {
+          comments: [comment, ...currentState.comments]
+        };
+      });
+    });
+  };
+
   render() {
     const { comments } = this.state;
 
     return (
       <div>
+        <PostComment
+          username={this.props.username}
+          postNewComment={this.postNewComment}
+        />
         <h4>Comments:</h4>
         {comments.map(comment => {
           return (

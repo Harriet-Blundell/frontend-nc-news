@@ -50,7 +50,10 @@ class SingleArticle extends Component {
         <p>Date: {article.created_at}</p>
         <p>Comments: {article.comment_count}</p>
         <Toggler>
-          <CommentsList articleId={article.article_id} />
+          <CommentsList
+            articleId={article.article_id}
+            username={this.props.username}
+          />
         </Toggler>
       </div>
     );
