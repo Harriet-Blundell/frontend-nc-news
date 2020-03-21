@@ -2,20 +2,46 @@ import React, { Component } from 'react';
 import { fetchAllArticles } from '../api';
 import ArticleCard from './ArticleCard';
 import './ArticleCard.css';
+import SortBy from './SortBy';
 
 class ArticlesList extends Component {
   state = {
     articles: [],
+    sort_by: '',
     isLoading: true
   };
 
   componentDidMount() {
-    fetchAllArticles({ topic: this.props.slug }).then(({ articles }) => {
+    fetchAllArticles({
+      topic: this.props.slug,
+      sort_by: this.state.sort_by
+    }).then(({ articles }) => {
       this.setState({
         articles: articles,
         isLoading: false
       });
     });
+  }
+
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  componentDidUpdate(prevProp, prevState) {
+    if (prevState.sort_by !== this.state.sort_by) {
+      fetchAllArticles({
+        topic: this.props.slug,
+        sort_by: this.state.sort_by
+      }).then(({ articles }) => {
+        this.setState({
+          articles: articles,
+          isLoading: false
+        });
+      });
+    }
   }
 
   render() {
@@ -27,6 +53,7 @@ class ArticlesList extends Component {
 
     return (
       <div>
+        <SortBy handleChange={this.handleChange} />
         <h2>Articles:</h2>
         <ul>
           {articles.map(article => {
