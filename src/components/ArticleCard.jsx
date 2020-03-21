@@ -14,7 +14,7 @@ const ArticleCard = props => {
   } = props.article;
   return (
     <div className="articleCard">
-      <Link to={`${article_id}`}>
+      <Link to={`/articles/${article_id}`}>
         <h3 className="article_title">{title}</h3>
       </Link>
 

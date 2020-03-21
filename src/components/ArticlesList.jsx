@@ -10,7 +10,7 @@ class ArticlesList extends Component {
   };
 
   componentDidMount() {
-    fetchAllArticles().then(({ articles }) => {
+    fetchAllArticles({ topic: this.props.slug }).then(({ articles }) => {
       this.setState({
         articles: articles,
         isLoading: false
