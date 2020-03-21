@@ -9,7 +9,7 @@ const ArticleCard = props => {
     created_at,
     comment_count,
     votes
-  } = props.mostPopularArticles;
+  } = props.article;
   return (
     <div className="articleCard">
       <h3 className="article_title">{title}</h3>

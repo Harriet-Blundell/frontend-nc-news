@@ -37,7 +37,7 @@ class MostPopularArticles extends Component {
           {popularArticles.map(article => {
             return (
               <li key={article.article_id} className="articleListContainer">
-                <ArticleCard mostPopularArticles={article} />
+                <ArticleCard article={article} />
               </li>
             );
           })}
