@@ -62,7 +62,7 @@ class ArticlesList extends Component {
       <div>
         <SortBy handleChange={this.handleChange} />
         <Order handleChange={this.handleChange} />
-        <h2>Articles:</h2>
+        <h2 className="article_title">Articles:</h2>
         <ul>
           {articles.map(article => {
             return (

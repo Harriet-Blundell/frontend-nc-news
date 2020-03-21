@@ -3,7 +3,7 @@ import './Order.css';
 
 const OrderArticles = props => {
   return (
-    <div>
+    <div className="orderButton">
       <form>
         <label htmlFor="order">
           {' '}

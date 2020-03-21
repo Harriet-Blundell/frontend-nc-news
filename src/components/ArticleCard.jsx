@@ -15,14 +15,14 @@ const ArticleCard = props => {
   return (
     <div className="articleCard">
       <Link to={`/articles/${article_id}`}>
-        <h3 className="article_title">{title}</h3>
+        <h3 className="article_card_title">{title}</h3>
       </Link>
 
-      <p className="article_name">Topic: {topic}</p>
+      <p>Topic: {topic}</p>
       <p>Posted by: {author}</p>
-      <p className="article_date">Date: {created_at}</p>
+      <p>Date: {created_at}</p>
       <p>Votes: {votes}</p>
-      <p className="article_comments">Comments: {comment_count}</p>
+      <p>Comments: {comment_count}</p>
     </div>
   );
 };

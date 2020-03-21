@@ -2,15 +2,22 @@
   width: 30em;
   margin: auto;
   margin-bottom: 20px;
+  margin-top: 2.5%;
   text-align: center;
   display: grid;
-  grid-template: 2fr / 3fr 3fr;
+  grid-template: 2fr / 2fr 2fr;
   color: black;
   box-shadow: 0.1px 0.1px 3px 4px whitesmoke;
   background-color: whitesmoke;
 }
 
 .article_title {
+  color: black;
+  margin-top: -5%;
+  font-size: xx-large;
+}
+
+.article_card_title {
   color: #ff9900;
 }
 
