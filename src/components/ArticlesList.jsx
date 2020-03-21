@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fetchAllArticles } from '../api';
 import ArticleCard from './ArticleCard';
+import './ArticleCard.css';
 
 class ArticlesList extends Component {
   state = {
@@ -30,7 +31,7 @@ class ArticlesList extends Component {
         <ul>
           {articles.map(article => {
             return (
-              <li key={article.article_id}>
+              <li key={article.article_id} className="article_list">
                 <ArticleCard article={article} />
               </li>
             );

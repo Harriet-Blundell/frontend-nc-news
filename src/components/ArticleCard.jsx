@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import './ArticleCard.css';
 
 const ArticleCard = props => {
   const {
     title,
+    article_id,
     topic,
     author,
     created_at,
@@ -12,7 +14,10 @@ const ArticleCard = props => {
   } = props.article;
   return (
     <div className="articleCard">
-      <h3 className="article_title">{title}</h3>
+      <Link to={`${article_id}`}>
+        <h3 className="article_title">{title}</h3>
+      </Link>
+
       <p className="article_name">Topic: {topic}</p>
       <p>Posted by: {author}</p>
       <p className="article_date">Date: {created_at}</p>

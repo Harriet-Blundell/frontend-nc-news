@@ -1,14 +1,12 @@
 .App {
   text-align: center;
   display: grid;
-  grid-template: 1fr / 2fr;
   font-family: 'Catamaran', sans-serif;
-  background-color: #2f303a;
 }
 
 .mostPopularTitle {
   padding-top: 20px;
-  color: whitesmoke;
+  color: black;
 }
 
 .articleListContainer {

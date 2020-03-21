@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fetchAllTopics } from '../api';
 import TopicCard from './TopicCard';
+import './TopicCard.css';
 
 class TopicsList extends Component {
   state = {
@@ -20,17 +21,15 @@ class TopicsList extends Component {
   render() {
     const { topics, isLoading } = this.state;
 
-    console.log(topics, 'in topic list');
-
     if (isLoading) {
       return <p>Loading topics...</p>;
     }
     return (
       <div>
-        <h2>Topics:</h2>
+        <h2 className="topics_title">Topics:</h2>
         {topics.map((topic, index) => {
           return (
-            <li key={index}>
+            <li key={index} className="topic_list">
               <TopicCard topic={topic} />
             </li>
           );

@@ -1,19 +1,19 @@
-.articleCard {
+.topic_card {
   width: 30em;
   margin: auto;
   margin-bottom: 20px;
   text-align: center;
   display: grid;
-  grid-template: 2fr / 3fr 3fr;
+  grid-template: 4fr / 4fr 10fr;
   color: black;
   box-shadow: 0.1px 0.1px 3px 4px whitesmoke;
   background-color: whitesmoke;
 }
 
-.article_title {
-  color: #ff9900;
+.topics_title {
+  color: black;
 }
 
-.article_list {
+.topic_list {
   list-style: none;
 }

@@ -2,7 +2,13 @@
   color: #ff9900;
 }
 
+.header_container {
+  background-color: #2f303a;
+}
+
 .NCNewsTitle {
   font-size: 50px;
   color: whitesmoke;
+  text-align: left;
+  margin-left: 10px;
 }
