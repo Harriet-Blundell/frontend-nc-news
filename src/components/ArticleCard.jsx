@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from '@reach/router';
 import './ArticleCard.css';
+import Voter from './Voter';
 
 const ArticleCard = props => {
   const {
@@ -21,7 +22,7 @@ const ArticleCard = props => {
       <p>Topic: {topic}</p>
       <p>Posted by: {author}</p>
       <p>Date: {created_at}</p>
-      <p>Votes: {votes}</p>
+      <Voter currentVote={votes} id={article_id} type={'articles'} />
       <p>Comments: {comment_count}</p>
     </div>
   );

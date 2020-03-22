@@ -56,8 +56,8 @@ export const deleteArticleById = id => {
   });
 };
 
-export const patchVote = (id, vote, type) => {
-  return NCNews.patch(`${type}/${id}`, { inc_votes: vote }).then(({ data }) => {
+export const patchVote = (id, num, type) => {
+  return NCNews.patch(`${type}/${id}`, { inc_votes: num }).then(({ data }) => {
     return data;
   });
 };

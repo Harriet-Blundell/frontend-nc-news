@@ -1,14 +1,15 @@
 import React from 'react';
+import Voter from './Voter';
 
 const CommentCard = props => {
-  const { body, author, created_at, votes } = props.comment;
+  const { body, author, created_at, votes, comment_id } = props.comment;
 
   return (
     <div>
       <p>Comment: {body}</p>
       <p> Posted by: {author}</p>
       <p>Date: {created_at}</p>
-      <p>Votes: {votes}</p>
+      <Voter currentVote={votes} id={comment_id} type={'comments'} />
     </div>
   );
 };

@@ -4,6 +4,7 @@ const UserLogIn = props => {
   return (
     <div>
       <form>
+        Logged in:
         <label htmlFor="users">
           <select onChange={props.handleChange} name="username">
             <option>guest</option>
