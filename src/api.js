@@ -67,3 +67,9 @@ export const postTopic = newTopic => {
     return data;
   });
 };
+
+export const postArticle = newArticle => {
+  return NCNews.post('articles', newArticle).then(({ data }) => {
+    return data;
+  });
+};

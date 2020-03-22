@@ -4,7 +4,8 @@ import ArticleCard from './ArticleCard';
 import './ArticleCard.css';
 import SortBy from './SortBy';
 import Order from './Order';
-import { deleteArticleById } from '../api';
+import { deleteArticleById, postArticle } from '../api';
+import PostArticle from './PostArticle';
 
 class ArticlesList extends Component {
   state = {
@@ -65,6 +66,16 @@ class ArticlesList extends Component {
     });
   };
 
+  postNewArticle = newArticle => {
+    postArticle(newArticle).then(({ article }) => {
+      this.setState(currentState => {
+        return {
+          articles: [article, ...currentState.articles]
+        };
+      });
+    });
+  };
+
   render() {
     const { articles, isLoading } = this.state;
 
@@ -75,6 +86,9 @@ class ArticlesList extends Component {
       <div>
         <SortBy handleChange={this.handleChange} />
         <Order handleChange={this.handleChange} />
+        {this.props.username !== 'guest' && (
+          <PostArticle postNewArticle={this.postNewArticle} />
+        )}
         <h2 className="article_title">Articles:</h2>
         <ul>
           {articles.map(article => {
