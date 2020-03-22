@@ -71,7 +71,6 @@ class ArticlesList extends Component {
     if (isLoading) {
       return <p>Loading articles...</p>;
     }
-
     return (
       <div>
         <SortBy handleChange={this.handleChange} />

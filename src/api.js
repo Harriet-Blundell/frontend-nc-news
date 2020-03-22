@@ -61,3 +61,9 @@ export const patchVote = (id, num, type) => {
     return data;
   });
 };
+
+export const postTopic = newTopic => {
+  return NCNews.post('/topics', newTopic).then(({ data }) => {
+    return data;
+  });
+};

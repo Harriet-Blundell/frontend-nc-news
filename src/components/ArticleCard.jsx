@@ -16,7 +16,6 @@ const ArticleCard = props => {
   } = props.article;
 
   const { username, deleteArticle } = props;
-
   return (
     <div className="articleCard">
       <Link to={`/articles/${article_id}`}>

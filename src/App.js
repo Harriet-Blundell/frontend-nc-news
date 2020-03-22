@@ -13,7 +13,7 @@ import Users from './components/Users';
 class App extends React.Component {
   state = {
     users: [],
-    username: ''
+    username: 'guest'
   };
 
   render() {
@@ -24,7 +24,7 @@ class App extends React.Component {
         <Users users={this.state.users} handleChange={this.handleChange} />
         <Router>
           <Home path="/" />
-          <TopicsList path="/topics" />
+          <TopicsList path="/topics" username={this.state.username} />
           <ArticlesList path="/topics/:slug" />
           <ArticlesList path="/articles" username={this.state.username} />
           <SingleArticle path="/articles/:id" username={this.state.username} />
