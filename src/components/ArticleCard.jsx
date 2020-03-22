@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '@reach/router';
 import './ArticleCard.css';
 import Voter from './Voter';
+import Delete from './Delete';
 
 const ArticleCard = props => {
   const {
@@ -13,6 +14,9 @@ const ArticleCard = props => {
     comment_count,
     votes
   } = props.article;
+
+  const { username, deleteArticle } = props;
+
   return (
     <div className="articleCard">
       <Link to={`/articles/${article_id}`}>
@@ -24,6 +28,9 @@ const ArticleCard = props => {
       <p>Date: {created_at}</p>
       <Voter currentVote={votes} id={article_id} type={'articles'} />
       <p>Comments: {comment_count}</p>
+      {username === author && (
+        <Delete deleteArticle={deleteArticle} articleId={article_id} />
+      )}
     </div>
   );
 };

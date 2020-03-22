@@ -3,6 +3,7 @@ import { fetchCommentsByArticleId } from '../api';
 import CommentCard from './CommentCard';
 import PostComment from './PostComment';
 import { postCommentById } from '../api';
+import { deleteCommentById } from '../api';
 
 class CommentsList extends Component {
   state = {
@@ -31,6 +32,19 @@ class CommentsList extends Component {
     });
   };
 
+  deleteComment = commentId => {
+    deleteCommentById(commentId).then(() => {
+      this.setState(prevState => {
+        const filteredComments = prevState.comments.filter(comment => {
+          return comment.comment_id !== commentId;
+        });
+        return {
+          comments: filteredComments
+        };
+      });
+    });
+  };
+
   render() {
     const { comments } = this.state;
 
@@ -44,7 +58,11 @@ class CommentsList extends Component {
         {comments.map(comment => {
           return (
             <li key={comment.comment_id}>
-              <CommentCard comment={comment} />
+              <CommentCard
+                comment={comment}
+                deleteComment={this.deleteComment}
+                username={this.props.username}
+              />
             </li>
           );
         })}

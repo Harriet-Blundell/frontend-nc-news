@@ -26,7 +26,7 @@ class App extends React.Component {
           <Home path="/" />
           <TopicsList path="/topics" />
           <ArticlesList path="/topics/:slug" />
-          <ArticlesList path="/articles" />
+          <ArticlesList path="/articles" username={this.state.username} />
           <SingleArticle path="/articles/:id" username={this.state.username} />
         </Router>
       </div>

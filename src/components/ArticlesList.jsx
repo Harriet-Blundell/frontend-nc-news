@@ -4,6 +4,7 @@ import ArticleCard from './ArticleCard';
 import './ArticleCard.css';
 import SortBy from './SortBy';
 import Order from './Order';
+import { deleteArticleById } from '../api';
 
 class ArticlesList extends Component {
   state = {
@@ -51,6 +52,19 @@ class ArticlesList extends Component {
     }
   }
 
+  deleteArticle = articleId => {
+    deleteArticleById(articleId).then(() => {
+      this.setState(prevState => {
+        const filteredArticles = prevState.articles.filter(article => {
+          return article.article_id !== articleId;
+        });
+        return {
+          articles: filteredArticles
+        };
+      });
+    });
+  };
+
   render() {
     const { articles, isLoading } = this.state;
 
@@ -67,7 +81,11 @@ class ArticlesList extends Component {
           {articles.map(article => {
             return (
               <li key={article.article_id} className="article_list">
-                <ArticleCard article={article} />
+                <ArticleCard
+                  article={article}
+                  username={this.props.username}
+                  deleteArticle={this.deleteArticle}
+                />
               </li>
             );
           })}

@@ -56,10 +56,3 @@ class Vote extends Component {
 }
 
 export default Vote;
-
-// make votes go UP only ONCE
-// make votes go DOWN only ONCE
-
-// handle the votes in one function and have two set states in it
-
-// pass in three arguments, id, type, and number
