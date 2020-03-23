@@ -87,7 +87,10 @@ class ArticlesList extends Component {
         <SortBy handleChange={this.handleChange} />
         <Order handleChange={this.handleChange} />
         {this.props.username !== 'guest' && (
-          <PostArticle postNewArticle={this.postNewArticle} />
+          <PostArticle
+            postNewArticle={this.postNewArticle}
+            username={this.props.username}
+          />
         )}
         <h2 className="article_title">Articles:</h2>
         <ul>
