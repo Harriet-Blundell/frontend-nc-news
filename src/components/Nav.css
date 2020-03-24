@@ -1,5 +1,6 @@
 .navigation-bar {
   text-align: center;
+  display: inline-block;
   background-color: rgba(0, 0, 0, 0.2);
 }
 

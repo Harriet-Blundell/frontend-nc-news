@@ -8,7 +8,6 @@ import Home from './components/Home';
 import TopicsList from './components/TopicsList';
 import ArticlesList from './components/ArticlesList';
 import SingleArticle from './components/SingleArticle';
-import Users from './components/Users';
 
 class App extends React.Component {
   state = {
@@ -19,9 +18,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header users={this.state.users} handleChange={this.handleChange} />
         <Nav />
-        <Users users={this.state.users} handleChange={this.handleChange} />
         <Router>
           <Home path="/" />
           <TopicsList path="/topics" username={this.state.username} />

@@ -6,16 +6,13 @@ const Nav = () => {
   return (
     <div className="navigation-bar">
       <Link to="/" className="home-link">
-        <span className="home-link-nav">H</span>
-        ome
+        Home
       </Link>
       <Link to="/topics" className="topic-link">
-        <span className="topic-link-letter">T</span>
-        opics
+        Topics
       </Link>
       <Link to="/articles" className="articles-link">
-        <span className="article-link-letter">A</span>
-        rticles
+        Articles
       </Link>
     </div>
   );

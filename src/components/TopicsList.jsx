@@ -24,7 +24,7 @@ class TopicsList extends Component {
     postTopic(newTopic).then(({ topic }) => {
       this.setState(currentState => {
         return {
-          topics: [topic, ...currentState.topics]
+          topics: [topic[0], ...currentState.topics]
         };
       });
     });
