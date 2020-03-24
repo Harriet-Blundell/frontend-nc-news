@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class PostedArticle extends Component {
   state = {
-    author: this.props.username,
+    author: '',
     title: '',
     topic: '',
     body: ''
@@ -11,10 +11,10 @@ class PostedArticle extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { author, title, topic, body } = this.state;
-    const { postNewArticle, username } = this.props;
+    const { postNewArticle } = this.props;
     postNewArticle({ author, title, topic, body });
     this.setState({
-      author: username,
+      author: '',
       title: '',
       topic: '',
       body: ''
@@ -27,18 +27,19 @@ class PostedArticle extends Component {
     });
   };
 
-  componentDidUpdate(prevProp, prevState) {
-    if (prevProp.username !== this.props.username) {
-      this.setState({
-        author: this.props.username
-      });
-    }
-  }
-
   render() {
+    console.log(this.topicsOption);
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          <label htmlFor="author">Name:</label>
+          <input
+            type="text"
+            id="author"
+            placeholder="Enter username"
+            value={this.state.author}
+            onChange={event => this.handleChange(event.target.value, 'author')}
+          />
           <label htmlFor="title">Title:</label>
           <input
             type="text"
@@ -46,7 +47,6 @@ class PostedArticle extends Component {
             placeholder="Enter a title"
             value={this.state.title}
             onChange={event => this.handleChange(event.target.value, 'title')}
-            required
           />
           <label htmlFor="topic">
             Topic:
@@ -70,7 +70,7 @@ class PostedArticle extends Component {
             value={this.state.body}
             required
           ></textarea>
-          <button>Post</button>
+          <button>Submit Article</button>
         </form>
       </div>
     );
@@ -88,6 +88,4 @@ export default PostedArticle;
 4. Bring in the post article component into articles list to pass the postArticle function down through props
 
 5. In postArticle.jsx create a handleSubmit which takes the states author, title, topic, and body
-
-Note: if you're logged in then it should post an article under your username?
 */
