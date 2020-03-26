@@ -31,9 +31,7 @@ class Vote extends Component {
     const { id, currentVote, type } = this.props;
     const { voteModifier } = this.state;
     return (
-      <div>
-        <p>Votes: {currentVote + voteModifier}</p>
-
+      <div className="voteContainer">
         <button
           disabled={this.state.voteModifier === 1}
           onClick={() => {
@@ -45,8 +43,8 @@ class Vote extends Component {
             alt="up vote button"
             className="upVoteButton"
           />
-        </button>
-
+        </button>{' '}
+        {currentVote + voteModifier}{' '}
         <button
           disabled={this.state.voteModifier === -1}
           onClick={() => {

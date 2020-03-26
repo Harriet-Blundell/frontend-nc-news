@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
-// import './PostArticle.css';
+import { fetchAllTopics } from '../api';
+import './PostArticle.css';
 
 class PostedArticle extends Component {
   state = {
     author: this.props.username,
     title: '',
+    topics: [],
     topic: '',
     body: ''
   };
+
+  componentDidMount() {
+    fetchAllTopics().then(({ topics }) => {
+      this.setState({
+        topics: topics,
+        isLoading: false
+      });
+    });
+  }
 
   handleSubmit = event => {
     event.preventDefault();
@@ -28,14 +39,19 @@ class PostedArticle extends Component {
   };
 
   componentDidUpdate(prevProp, prevState) {
-    if (prevProp.username !== this.props.username) {
+    if (
+      prevProp.username !== this.props.username ||
+      prevState.topics !== this.state.topics
+    ) {
       this.setState({
-        author: this.props.username
+        author: this.props.username,
+        topic: this.state.topic
       });
     }
   }
 
   render() {
+    const { topics } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="postArticleForm">
@@ -50,17 +66,19 @@ class PostedArticle extends Component {
               required
             />
           </p>
-          <p>
-            <label htmlFor="topic">Topic:</label>
-            <input
-              type="text"
-              id="topic"
-              placeholder="Enter a topic"
-              value={this.state.topic}
+          Topics:
+          <label htmlFor="topics">
+            <select
               onChange={event => this.handleChange(event.target.value, 'topic')}
-            />
-          </p>
-
+            >
+              <option selected disabled>
+                Choose
+              </option>
+              {topics.map((topic, index) => {
+                return <option key={index}>{topic.slug}</option>;
+              })}
+            </select>
+          </label>
           <p className="description">
             <label htmlFor="body">Description:</label>
             <textarea
