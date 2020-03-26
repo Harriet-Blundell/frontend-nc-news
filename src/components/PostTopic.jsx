@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './TopicCard.css';
 
 class PostedTopic extends Component {
   state = {
@@ -27,7 +28,9 @@ class PostedTopic extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="slug">Topic:</label>
+          <label htmlFor="slug" className="addTopicTitle">
+            Topic:
+          </label>
           <input
             type="text"
             id="slug"
@@ -35,7 +38,9 @@ class PostedTopic extends Component {
             value={this.state.slug}
             onChange={event => this.handleChange(event.target.value, 'slug')}
           />{' '}
-          <label htmlFor="description">Description:</label>
+          <label htmlFor="description" className="addDescription">
+            Description:
+          </label>
           <input
             type="text"
             id="description"
@@ -45,7 +50,7 @@ class PostedTopic extends Component {
               this.handleChange(event.target.value, 'description')
             }
           />
-          <button>Submit</button>
+          <button className="submitTopicButton">SUBMIT</button>
         </form>
       </div>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './PostArticle.css';
+// import './PostArticle.css';
 
 class PostedArticle extends Component {
   state = {

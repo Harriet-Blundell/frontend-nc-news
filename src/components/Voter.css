@@ -1,0 +1,12 @@
+.upVoteButton {
+  width: 20px;
+}
+
+.downVoteButton {
+  width: 20px;
+  transform: scaleY(-1);
+}
+
+button {
+  background-color: white;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import './SortBy.css';
+// import './SortBy.css';
 
 const SortArticles = props => {
   return (

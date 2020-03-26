@@ -4,16 +4,71 @@
   margin-bottom: 20px;
   text-align: center;
   display: grid;
-  grid-template: 4fr / 4fr 10fr;
+  grid-template-columns: 100%;
+  padding: 0;
+  margin: auto;
+  width: 350px;
+  height: 150px;
   color: black;
-  box-shadow: 0.1px 0.1px 3px 4px whitesmoke;
+  box-shadow: 0.1px 0.1px 3px 4px silver;
   background-color: whitesmoke;
 }
 
 .topics_title {
   color: black;
+  text-align: center;
 }
 
-.topic_list {
-  list-style: none;
+.topicLink {
+  text-decoration: none;
+  color: #ff9900;
+}
+
+.topicName:hover {
+  background-color: #202829;
+  margin-left: 80px;
+  margin-right: 80px;
+  border-radius: 20px;
+}
+
+.descriptionTitle {
+  font-weight: bold;
+}
+
+.addTopicMsg {
+  font-size: 20px;
+}
+
+.addTopicTitle {
+  margin-right: 10px;
+  margin-left: 55px;
+  font-size: 20px;
+}
+
+.addDescription {
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+input[type='text'] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.submitTopicButton {
+  background-color: #202829;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  padding: 13px 25px;
+  text-decoration: none;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+
+.submitTopicButton:hover {
+  background-color: rgb(150, 30, 30);
 }

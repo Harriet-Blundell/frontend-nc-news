@@ -4,12 +4,16 @@ import Users from './Users';
 
 const Header = props => {
   return (
-    <div className="header_container">
+    <div className="headerContainer">
       <h1 className="NCNewsTitle">
-        <span className="headerTitleLetter">N</span>C News
+        <span className="headerTitleLetter">N</span>C NEWS
       </h1>
       <div className="userButton">
-        <Users users={props.users} handleChange={props.handleChange} />
+        <Users
+          users={props.users}
+          username={props.username}
+          handleChange={props.handleChange}
+        />
       </div>
     </div>
   );

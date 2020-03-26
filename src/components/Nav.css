@@ -1,45 +1,67 @@
-.navigation-bar {
+.navigationBar {
+  background-color: rgb(150, 30, 30);
+  color: black;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 25px;
   text-align: center;
-  display: inline-block;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.home-link-nav {
-  color: #ff9900;
 }
 
 .home-link {
-  font-size: 20px;
   color: whitesmoke;
   text-decoration: none;
-  text-shadow: 1px 1px 3px #000000;
-  padding-left: 30px;
+  margin-right: 35px;
+}
+
+.homeIcon {
+  width: 18%;
+  margin-right: 10px;
+  filter: invert(100%);
+  margin-top: 2px;
+}
+
+.home-link:hover {
   font-weight: bold;
 }
 
-.topic-link-letter {
-  color: #ff9900;
+li {
+  list-style-type: none;
+  margin-bottom: 30px;
 }
 
 .topic-link {
-  font-size: 20px;
   color: whitesmoke;
   text-decoration: none;
-  text-shadow: 1px 1px 3px #000000;
-  padding-left: 100px;
-  font-weight: bold;
+  margin-right: 25px;
 }
 
-.article-link-letter {
-  color: #ff9900;
+.topicIcon {
+  width: 18%;
+  margin-right: 10px;
+  filter: invert(100%);
+}
+
+.topic-link:hover {
+  font-weight: bold;
 }
 
 .articles-link {
-  font-size: 20px;
   color: whitesmoke;
   text-decoration: none;
-  text-shadow: 1px 1px 3px #000000;
-  text-align: center;
-  padding-left: 100px;
+}
+
+.articleIcon {
+  width: 18%;
+  margin-right: 10px;
+  filter: invert(100%);
+}
+
+.articles-link:hover {
   font-weight: bold;
+}
+
+.navigationContainer {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }

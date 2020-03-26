@@ -70,7 +70,7 @@ class ArticlesList extends Component {
     postArticle(newArticle).then(({ article }) => {
       this.setState(currentState => {
         return {
-          articles: [article, ...currentState.articles]
+          articles: [article[0], ...currentState.articles]
         };
       });
     });
@@ -88,7 +88,10 @@ class ArticlesList extends Component {
         <Order handleChange={this.handleChange} />
 
         {this.props.username !== 'guest' && (
-          <PostArticle postNewArticle={this.postNewArticle} />
+          <PostArticle
+            postNewArticle={this.postNewArticle}
+            username={this.props.username}
+          />
         )}
 
         <h2 className="article_title">Articles:</h2>

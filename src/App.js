@@ -18,9 +18,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header users={this.state.users} handleChange={this.handleChange} />
+        <Header
+          users={this.state.users}
+          username={this.state.username}
+          handleChange={this.handleChange}
+        />
         <Nav />
-        <Router>
+        <Router className="routeDiv">
           <Home path="/" />
           <TopicsList path="/topics" username={this.state.username} />
           <ArticlesList path="/topics/:slug" />

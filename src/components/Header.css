@@ -2,21 +2,38 @@
   color: #ff9900;
 }
 
-.header_container {
-  background-color: #6e0909;
-  display: flex;
-  flex-direction: row;
+.headerContainer {
+  background-color: #202829;
+  display: grid;
+  grid-template-areas:
+    'title title'
+    'logIn';
 }
 
 .NCNewsTitle {
-  font-size: 50px;
+  font-size: 45px;
+  font-weight: lighter;
   color: whitesmoke;
-  text-align: center;
-  margin-left: 15px;
-  margin: 0px;
+  color: white;
+  text-shadow: 1px 1px 4px whitesmoke;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+.userContainer {
+  color: white;
+  margin-right: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .userButton {
+  display: flex;
+  flex-direction: row-reverse;
   text-align: right;
   position: absolute;
   right: 0;
@@ -34,14 +51,12 @@
   background-color: #fff;
 }
 
-.user-container {
-  color: white;
-  margin-right: 10px;
-  font-size: 15px;
-  font-weight: bold;
-}
-
 .login-message {
   margin-right: 5px;
   margin-top: 5px;
+  margin-bottom: 9px;
+}
+
+.currentUser {
+  margin-bottom: 5px;
 }

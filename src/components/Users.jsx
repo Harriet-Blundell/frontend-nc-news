@@ -4,8 +4,12 @@ import './Header.css';
 const UserLogIn = props => {
   return (
     <div>
-      <form className="user-container">
-        <p className="login-message">Please log in here</p>
+      <form className="userContainer">
+        {props.username === 'guest' ? (
+          <p className="login-message">Please log in here</p>
+        ) : (
+          <p className="currentUser">Currently logged in as {props.username}</p>
+        )}
         USER:
         <label htmlFor="users">
           <select

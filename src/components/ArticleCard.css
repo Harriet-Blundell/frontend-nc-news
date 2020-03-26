@@ -13,7 +13,6 @@
 
 .article_title {
   color: black;
-  margin-top: -5%;
   font-size: xx-large;
   text-align: center;
 }
@@ -41,4 +40,9 @@
 
 .singleArticle_generalinfo {
   font-weight: bold;
+}
+
+.singleArticleBody {
+  margin-left: 100px;
+  margin-right: 100px;
 }

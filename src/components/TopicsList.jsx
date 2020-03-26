@@ -38,13 +38,17 @@ class TopicsList extends Component {
     }
     return (
       <div>
-        {this.props.username !== 'guest' && (
+        {this.props.username === 'guest' ? (
+          <p className="addTopicMsg">
+            If you want to add a new topic, please log in.
+          </p>
+        ) : (
           <PostTopic postedTopic={this.postedTopic} />
         )}
-        <h2 className="topics_title">Topics:</h2>
+        <h2 className="topics_title">Topics</h2>
         {topics.map((topic, index) => {
           return (
-            <li key={index} className="topic_list">
+            <li key={index}>
               <TopicCard topic={topic} />
             </li>
           );

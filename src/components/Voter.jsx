@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Voter.css';
 import { patchVote } from '../api';
 
 class Vote extends Component {
@@ -39,7 +40,11 @@ class Vote extends Component {
             this.handleUpVote(id, type);
           }}
         >
-          Up Vote
+          <img
+            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/softbank/145/upwards-black-arrow_2b06.png"
+            alt="up vote button"
+            className="upVoteButton"
+          />
         </button>
 
         <button
@@ -48,7 +53,11 @@ class Vote extends Component {
             this.handleDownVote(id, type);
           }}
         >
-          Down Vote
+          <img
+            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/softbank/145/upwards-black-arrow_2b06.png"
+            alt="down vote button"
+            className="downVoteButton"
+          />
         </button>
       </div>
     );

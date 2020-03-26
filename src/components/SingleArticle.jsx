@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { fetchArticleById } from '../api';
-import './ArticleCard.css';
+// import './ArticleCard.css';
 import CommentsList from './CommentsList';
 import Toggler from './Toggler';
 
@@ -43,10 +43,10 @@ class SingleArticle extends Component {
 
         <h3>{article.title}</h3>
         <p className="singleArticle_generalinfo">General Information:</p>
-        {article.body}
-        <p>Votes: {article.votes}</p>
+        <p className="singleArticleBody">{article.body}</p>
+        <p className="votesTag">Votes: {article.votes}</p>
         <p>Topic: {article.topic}</p>
-        <p>Posted by: {article.author}</p>
+        <p className="postedTag">Posted by: {article.author}</p>
         <p>Date: {article.created_at}</p>
         <p>Comments: {article.comment_count}</p>
         <Toggler>

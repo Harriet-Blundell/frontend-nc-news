@@ -1,7 +1,36 @@
 .App {
-  text-align: left;
-  display: grid;
   font-family: 'Catamaran', sans-serif;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: 80px auto;
+  grid-template-areas:
+    'header header'
+    'sideBar mainContent';
+  min-height: 100vh;
+}
+
+.headerContainer {
+  grid-area: header;
+}
+
+.userButton {
+  grid-area: header;
+}
+
+.navigationBar {
+  grid-area: sideBar;
+}
+
+.routeDiv {
+  grid-area: mainContent;
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .mostPopularTitle {
