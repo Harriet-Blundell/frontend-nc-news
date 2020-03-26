@@ -1,1 +1,115 @@
+.postTopicContainer {
+  font-size: 20px;
+}
 
+.titleAndTopicContainer {
+  display: grid;
+  grid-template-columns: 10fr 10fr;
+  grid-template-areas: 'title topic';
+  max-width: 410px;
+  display: inline-flex;
+  margin-right: -40px;
+}
+
+@media only screen and (max-width: 1350px) {
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.newArticleTitle {
+  margin-right: 5px;
+  grid-area: title;
+}
+
+.titleBox {
+  width: 160px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 15px;
+  grid-area: title;
+}
+
+.topicSelect {
+  position: sticky;
+  width: 160px;
+  padding: 11px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: white;
+  font-size: 15px;
+  color: darkslategrey;
+  grid-area: topic;
+  margin-top: 8px;
+}
+
+.topicSelect:hover {
+  font-weight: bold;
+  font-size: 15px;
+  color: black;
+}
+
+.newTopic {
+  margin-right: 5px;
+  grid-area: topic;
+}
+
+.newDescription {
+  margin: auto;
+  margin-left: 5px;
+}
+
+textarea {
+  margin-left: 40px;
+  resize: none;
+  position: sticky;
+  margin-right: 8px;
+  padding: 12px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: white;
+  font-size: 15px;
+  box-sizing: border-box;
+  max-width: 60%;
+}
+
+.articleSubmit {
+  background-color: #202829;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  padding: 13px 25px;
+  text-decoration: none;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+
+.articleSubmit:hover {
+  background-color: rgb(150, 30, 30);
+}
+
+.togglePost {
+  background-color: #202829;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 10px 10px;
+  cursor: pointer;
+  margin-right: 310px;
+  position: sticky;
+}
+
+.togglePost:hover {
+  background-color: rgb(150, 30, 30);
+}

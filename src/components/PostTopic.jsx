@@ -37,6 +37,7 @@ class PostedTopic extends Component {
             placeholder="Enter a new topic"
             value={this.state.slug}
             onChange={event => this.handleChange(event.target.value, 'slug')}
+            required
           />{' '}
           <label htmlFor="description" className="addDescription">
             Description:
@@ -49,6 +50,7 @@ class PostedTopic extends Component {
             onChange={event =>
               this.handleChange(event.target.value, 'description')
             }
+            required
           />
           <button className="submitTopicButton">SUBMIT</button>
         </form>

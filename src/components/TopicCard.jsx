@@ -1,5 +1,5 @@
 import React from 'react';
-// import './TopicCard.css';
+import './TopicCard.css';
 import { Link } from '@reach/router';
 
 const TopicCard = props => {

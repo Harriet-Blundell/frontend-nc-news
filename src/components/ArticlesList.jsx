@@ -6,6 +6,7 @@ import SortBy from './SortBy';
 import Order from './Order';
 import { deleteArticleById, postArticle } from '../api';
 import PostArticle from './PostArticle';
+import Toggler from './Toggler';
 
 class ArticlesList extends Component {
   state = {
@@ -87,18 +88,19 @@ class ArticlesList extends Component {
         <SortBy handleChange={this.handleChange} />
         <Order handleChange={this.handleChange} />
 
+        <h2 className="article_title">Articles:</h2>
         {this.props.username === 'guest' ? (
           <p className="addArticleMsg">
             If you want to add a new article, please log in.
           </p>
         ) : (
-          <PostArticle
-            postNewArticle={this.postNewArticle}
-            username={this.props.username}
-          />
+          <Toggler>
+            <PostArticle
+              postNewArticle={this.postNewArticle}
+              username={this.props.username}
+            />
+          </Toggler>
         )}
-
-        <h2 className="article_title">Articles:</h2>
         <ul>
           {articles.map(article => {
             return (

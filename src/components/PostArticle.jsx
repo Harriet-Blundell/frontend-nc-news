@@ -27,7 +27,6 @@ class PostedArticle extends Component {
     postNewArticle({ author, title, topic, body });
     this.setState({
       title: '',
-      topic: '',
       body: ''
     });
   };
@@ -53,48 +52,61 @@ class PostedArticle extends Component {
   render() {
     const { topics } = this.state;
     return (
-      <div>
-        <form onSubmit={this.handleSubmit} className="postArticleForm">
-          <p>
-            <label htmlFor="title">Title:</label>
-            <input
-              type="text"
-              id="title"
-              placeholder="Enter a title"
-              value={this.state.title}
-              onChange={event => this.handleChange(event.target.value, 'title')}
-              required
-            />
-          </p>
-          Topics:
-          <label htmlFor="topics">
-            <select
-              onChange={event => this.handleChange(event.target.value, 'topic')}
-            >
-              <option selected disabled>
-                Choose
-              </option>
-              {topics.map((topic, index) => {
-                return <option key={index}>{topic.slug}</option>;
-              })}
-            </select>
+      <div className="postTopicContainer">
+        <form onSubmit={this.handleSubmit} className="formContainer">
+          <div className="titleAndTopicContainer">
+            <p>
+              <label htmlFor="title" className="newArticleTitle">
+                Title:
+              </label>
+              <input
+                className="titleBox"
+                type="text"
+                id="title"
+                placeholder="Enter a title"
+                value={this.state.title}
+                onChange={event =>
+                  this.handleChange(event.target.value, 'title')
+                }
+                required
+              />
+            </p>
+            <p>
+              <label htmlFor="topics" className="newTopic">
+                Topic:
+              </label>
+              <select
+                className="topicSelect"
+                onChange={event =>
+                  this.handleChange(event.target.value, 'topic')
+                }
+              >
+                <option selected disabled>
+                  Choose
+                </option>
+                {topics.map((topic, index) => {
+                  return <option key={index}>{topic.slug}</option>;
+                })}
+              </select>
+            </p>
+          </div>
+          <br />
+          <label htmlFor="body" className="newDescription">
+            Description:
           </label>
-          <p className="description">
-            <label htmlFor="body">Description:</label>
-            <textarea
-              rows="7"
-              cols="50"
-              placeholder="Enter description here"
-              onChange={event => {
-                this.handleChange(event.target.value, 'body');
-              }}
-              value={this.state.body}
-              required
-            ></textarea>
-          </p>
-          <p className="submit">
-            <input type="submit" value="Submit" />
-          </p>
+          <br />
+          <textarea
+            rows="7"
+            cols="50"
+            placeholder="Enter description here"
+            onChange={event => {
+              this.handleChange(event.target.value, 'body');
+            }}
+            value={this.state.body}
+            required
+          ></textarea>
+          <br />
+          <button className="articleSubmit">SUBMIT</button>
         </form>
       </div>
     );

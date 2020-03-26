@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './PostArticle.css';
 
 class Toggler extends Component {
   state = {
@@ -18,8 +19,8 @@ class Toggler extends Component {
 
     return (
       <div>
-        <button onClick={this.handleClick}>
-          {showToggle ? 'Hide Comments' : 'Show Comments'}
+        <button onClick={this.handleClick} className="togglePost">
+          {showToggle ? 'HIDE ARTICLE FORM' : 'CREATE A NEW ARTICLE'}
         </button>
         {showToggle && this.props.children}
       </div>

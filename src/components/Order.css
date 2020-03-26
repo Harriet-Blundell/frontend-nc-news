@@ -1,4 +1,4 @@
-/* .order_button {
+.order_button {
   font-size: 14px;
   font-family: sans-serif;
   font-weight: bold;
@@ -7,5 +7,8 @@
   box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
   background-color: #fff;
   margin-top: 1%;
-  margin-left: 1.2%;
-} */
+}
+
+.orderContainer {
+  float: left;
+}
