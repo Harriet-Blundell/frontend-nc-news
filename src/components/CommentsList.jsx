@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { fetchCommentsByArticleId } from '../api';
 import CommentCard from './CommentCard';
 import PostComment from './PostComment';
+import './CommentList.css';
 import { postCommentById } from '../api';
 import { deleteCommentById } from '../api';
 
 class CommentsList extends Component {
   state = {
-    comments: []
+    comments: [],
+    isLoading: true
   };
 
   componentDidMount() {
@@ -46,14 +48,25 @@ class CommentsList extends Component {
   };
 
   render() {
-    const { comments } = this.state;
+    const { comments, isLoading } = this.state;
+
+    if (isLoading) {
+      return <p>Loading comments...</p>;
+    }
 
     return (
       <div>
-        <PostComment
-          username={this.props.username}
-          postNewComment={this.postNewComment}
-        />
+        {this.props.username !== 'guest' ? (
+          <PostComment
+            username={this.props.username}
+            postNewComment={this.postNewComment}
+          />
+        ) : (
+          <p className="postCommentMsg">
+            If you want to post a comment, please log in.
+          </p>
+        )}
+
         <h4>Comments:</h4>
         {comments.map(comment => {
           return (

@@ -32,7 +32,8 @@ class ArticlesList extends Component {
       })
       .catch(err => {
         this.setState({
-          error: err.response
+          error: { msg: err.response.data.msg, status: err.response.status },
+          isLoading: false
         });
       });
   }
@@ -79,7 +80,8 @@ class ArticlesList extends Component {
     postArticle(newArticle).then(({ article }) => {
       this.setState(currentState => {
         return {
-          articles: [article[0], ...currentState.articles]
+          articles: [article[0], ...currentState.articles],
+          isLoading: false
         };
       });
     });
@@ -92,8 +94,8 @@ class ArticlesList extends Component {
       return <p>Loading articles...</p>;
     }
 
-    if (error !== null) {
-      return <ErrorPage />;
+    if (error) {
+      return <ErrorPage error={error} />;
     }
 
     return (

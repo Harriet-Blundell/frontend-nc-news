@@ -1,0 +1,12 @@
+.postCommentMsg {
+  background-color: #202829;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  /* padding: 10px 20px; */
+  text-decoration: none;
+  margin: 10px 10px;
+  cursor: pointer;
+  position: sticky;
+}

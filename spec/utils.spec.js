@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { formatDate } = require('../utils.js');
+const { formatDate } = require('../src/utils');
 
 describe('formatDate', () => {
   it('returns the date formatted in dd/mm/yy', () => {

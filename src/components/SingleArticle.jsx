@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { fetchArticleById } from '../api';
 import Voter from './Voter';
-// import './ArticleCard.css';
 import CommentsList from './CommentsList';
 import ErrorPage from './ErrorPage';
+import { formatDate } from '../utils';
 
 class SingleArticle extends Component {
   state = {
@@ -64,7 +64,7 @@ class SingleArticle extends Component {
         />
         <p>Topic: {article.topic}</p>
         <p className="postedTag">Posted by: {article.author}</p>
-        <p>Date: {article.created_at}</p>
+        <p>Date: {formatDate(article.created_at)}</p>
         <p>Comments: {article.comment_count}</p>
 
         <CommentsList

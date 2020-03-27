@@ -23,7 +23,8 @@ class TopicsList extends Component {
       })
       .catch(err => {
         this.setState({
-          error: err.response
+          error: err.response,
+          isLoading: false
         });
       });
   }
