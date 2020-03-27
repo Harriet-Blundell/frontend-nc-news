@@ -3,20 +3,29 @@ import { fetchArticleById } from '../api';
 import Voter from './Voter';
 // import './ArticleCard.css';
 import CommentsList from './CommentsList';
+import ErrorPage from './ErrorPage';
 
 class SingleArticle extends Component {
   state = {
     article: [],
-    isLoading: true
+    isLoading: true,
+    error: null
   };
 
   componentDidMount() {
-    fetchArticleById(this.props.id).then(({ article }) => {
-      this.setState({
-        article: article,
-        isLoading: false
+    fetchArticleById(this.props.id)
+      .then(({ article }) => {
+        this.setState({
+          article: article,
+          isLoading: false
+        });
+      })
+      .catch(err => {
+        this.setState({
+          error: { msg: err.response.data.msg, status: err.response.status },
+          isLoading: false
+        });
       });
-    });
   }
 
   componentDidUpdate(prevProp, prevState) {
@@ -31,10 +40,14 @@ class SingleArticle extends Component {
   }
 
   render() {
-    const { article, isLoading } = this.state;
+    const { article, isLoading, error } = this.state;
 
     if (isLoading) {
       return <p>Loading article...</p>;
+    }
+
+    if (error) {
+      return <ErrorPage error={error} />;
     }
 
     return (

@@ -18,11 +18,14 @@ const ArticleCard = props => {
   const { username, deleteArticle } = props;
   return (
     <div className="articleCard">
-      <Link to={`/articles/${article_id}`}>
+      <Link to={`/articles/${article_id}`} className="articleLink">
         <h3 className="article_card_title">{title}</h3>
       </Link>
 
-      <p>Topic: {topic}</p>
+      <p>
+        Topic: <br />
+        {topic}
+      </p>
       <p>Posted by: {author}</p>
       <p>Date: {created_at}</p>
       <Voter currentVote={votes} id={article_id} type={'articles'} />

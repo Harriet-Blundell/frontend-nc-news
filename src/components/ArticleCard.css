@@ -15,11 +15,15 @@
   color: black;
   font-size: xx-large;
   text-align: center;
-  margin-right: 290px;
+  margin-right: 275px;
 }
 
 .article_card_title {
   color: #ff9900;
+}
+
+.articleLink {
+  text-decoration: none;
 }
 
 .article_list {
@@ -28,6 +32,7 @@
 
 .addArticleMsg {
   font-size: 20px;
+  margin-right: 260px;
 }
 
 .singleArticleById {
@@ -39,7 +44,7 @@
   display: grid;
   width: 60%;
   color: black;
-  box-shadow: 0.1px 0.1px 3px 4px whitesmoke;
+  box-shadow: 0.1px 0.1px 3px 4px silver;
   background-color: whitesmoke;
 }
 

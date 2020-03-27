@@ -7,13 +7,15 @@ import Order from './Order';
 import { deleteArticleById, postArticle } from '../api';
 import PostArticle from './PostArticle';
 import Toggler from './Toggler';
+import ErrorPage from './ErrorPage';
 
 class ArticlesList extends Component {
   state = {
     articles: [],
     sort_by: '',
     order: '',
-    isLoading: true
+    isLoading: true,
+    error: null
   };
 
   componentDidMount() {
@@ -21,12 +23,18 @@ class ArticlesList extends Component {
       topic: this.props.slug,
       sort_by: this.state.sort_by,
       order: this.state.order
-    }).then(({ articles }) => {
-      this.setState({
-        articles: articles,
-        isLoading: false
+    })
+      .then(({ articles }) => {
+        this.setState({
+          articles: articles,
+          isLoading: false
+        });
+      })
+      .catch(err => {
+        this.setState({
+          error: err.response
+        });
       });
-    });
   }
 
   handleChange = event => {
@@ -78,11 +86,16 @@ class ArticlesList extends Component {
   };
 
   render() {
-    const { articles, isLoading } = this.state;
+    const { articles, isLoading, error } = this.state;
 
     if (isLoading) {
       return <p>Loading articles...</p>;
     }
+
+    if (error !== null) {
+      return <ErrorPage />;
+    }
+
     return (
       <div>
         <SortBy handleChange={this.handleChange} />

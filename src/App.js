@@ -8,6 +8,7 @@ import Home from './components/Home';
 import TopicsList from './components/TopicsList';
 import ArticlesList from './components/ArticlesList';
 import SingleArticle from './components/SingleArticle';
+import ErrorPage from './components/ErrorPage';
 
 class App extends React.Component {
   state = {
@@ -30,6 +31,7 @@ class App extends React.Component {
           <ArticlesList path="/topics/:slug" />
           <ArticlesList path="/articles" username={this.state.username} />
           <SingleArticle path="/articles/:id" username={this.state.username} />
+          <ErrorPage default error={{ status: 404, msg: 'page not found' }} />
         </Router>
       </div>
     );

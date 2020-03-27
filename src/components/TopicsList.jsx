@@ -4,20 +4,28 @@ import TopicCard from './TopicCard';
 import './TopicCard.css';
 import { postTopic } from '../api';
 import PostTopic from './PostTopic';
+import ErrorPage from './ErrorPage';
 
 class TopicsList extends Component {
   state = {
     topics: [],
-    isLoading: true
+    isLoading: true,
+    error: null
   };
 
   componentDidMount() {
-    fetchAllTopics().then(({ topics }) => {
-      this.setState({
-        topics: topics,
-        isLoading: false
+    fetchAllTopics()
+      .then(({ topics }) => {
+        this.setState({
+          topics: topics,
+          isLoading: false
+        });
+      })
+      .catch(err => {
+        this.setState({
+          error: err.response
+        });
       });
-    });
   }
 
   postedTopic = newTopic => {
@@ -31,11 +39,16 @@ class TopicsList extends Component {
   };
 
   render() {
-    const { topics, isLoading } = this.state;
+    const { topics, isLoading, error } = this.state;
 
     if (isLoading) {
       return <p>Loading topics...</p>;
     }
+
+    if (error) {
+      return <ErrorPage error={error} />;
+    }
+
     return (
       <div>
         {this.props.username === 'guest' ? (
