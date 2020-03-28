@@ -1,68 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NC News Frontend
 
-## Available Scripts
+## General Information:
 
-In the project directory, you can run:
+Northcoders News serves as a social news aggregation website where users can rate web content and have discussions in the style of Reddit. The main form of content displayed on my NC News are articles which have been divided into topics. Users have the ability, if they are logged in, to create an article, create a comment, post a comment, up or down vote articles and individual comments. Also, a user can delete their own article or comment which they have added when they are logged in.
 
-### `npm start`
+The making of NC News had enabled myself to bring together all of the front-end skills (React, CSS, and ReachRouter), technologies and best practices Northcoder tutors had taught. In regard to this, I utilised by backend project by making asynchronous API calls as well as use HTTP request types to interact with my backend, and HTTP response codes to update my UI when needed.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The project was hosted on Netlify and the link can be found here: [https://hb-nc-news.netlify.com/](https://hb-nc-news.netlify.com/)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The repository for my backend can be found here: [https://github.com/Harriet-Blundell/nc-news](https://github.com/Harriet-Blundell/nc-news)
 
-### `npm test`
+The hosted version on heroku of my backend can be found here: [https://harrietblundell-be-nc-news.herokuapp.com/](https://harrietblundell-be-nc-news.herokuapp.com/)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Component Tree Plan
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="src/NC_News_Component_Plan-Copy of Page-1.jpg" width="1200">
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The component tree plan enabled me to plan out user stories in a much more clear and concise way. This also helped when designing my wireframe and what I wanted the user to see on the page when they navigated through the website. Most importantly, it significantly benefited when implementing the code to create NC News in terms of what needed to be a class or functional component.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Requirements
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+In order to get started, you will need Node.js and NPM installed on your machine.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you are unsure about whether you have these installed, type the following command into your terminal:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+node -v
+npm - v
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Ensure the version numbers you get back are either v13.3.0 for node -v and 6.13.1 for npm -v; if not, install and/or update.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **Fork** and **clone** this repository to your own github repository
 
-### Code Splitting
+2. Run **npm init -y** to create a new package.json
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+3. Type **npm start** to run the script
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Acknowledgements
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Thank you to Northcoders for helping me build my frontend project, NC News.
