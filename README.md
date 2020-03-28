@@ -18,6 +18,8 @@ The hosted version on heroku of my backend can be found here: [https://harrietbl
 
 <img src="src/NC_News_Component_Plan-Copy of Page-1.jpg" width="1200">
 
+**Please click on the image to view it clearer**
+
 The component tree plan enabled me to plan out user stories in a much more clear and concise way. This also helped when designing my wireframe and what I wanted the user to see on the page when they navigated through the website. Most importantly, it significantly benefited when implementing the code to create NC News in terms of what needed to be a class or functional component.
 
 ---
