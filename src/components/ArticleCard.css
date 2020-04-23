@@ -71,6 +71,20 @@
     background-color: whitesmoke;
   }
 
+  .commentsForm {
+    max-width: 25em;
+  }
+
+  .singleArticleBody {
+    max-width: 90%;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .commentTextArea {
+    max-width: 80%;
+  }
+
   .articleCard {
     width: 24em;
     margin-left: -25px;

@@ -1,36 +1,37 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class PostedComment extends Component {
   state = {
-    body: ''
-  };
+    body: '',
+  }
 
-  handleSubmit = event => {
-    event.preventDefault();
-    const { body } = this.state;
-    const { username, postNewComment } = this.props;
-    postNewComment({ username, body });
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const { body } = this.state
+    const { username, postNewComment } = this.props
+    postNewComment({ username, body })
     this.setState({
-      body: ''
-    });
-  };
+      body: '',
+    })
+  }
 
   handleChange = (text, key) => {
     this.setState({
-      body: text
-    });
-  };
+      body: text,
+    })
+  }
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className='commentsContainer'>
+        <form onSubmit={this.handleSubmit} className='commentsForm'>
           <textarea
-            rows="7"
-            cols="50"
-            placeholder="Post a comment here..."
-            onChange={event => {
-              this.handleChange(event.target.value, 'body');
+            className='commentTextArea'
+            rows='7'
+            cols='50'
+            placeholder='Post a comment here...'
+            onChange={(event) => {
+              this.handleChange(event.target.value, 'body')
             }}
             value={this.state.body}
             required
@@ -39,8 +40,8 @@ class PostedComment extends Component {
           <button>Submit</button>
         </form>
       </div>
-    );
+    )
   }
 }
 
-export default PostedComment;
+export default PostedComment
