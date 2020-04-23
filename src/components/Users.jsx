@@ -3,7 +3,7 @@ import './Header.css'
 
 const UserLogIn = (props) => {
   return (
-    <div class='userDiv'>
+    <div className='userDiv'>
       <form className='userContainer'>
         {props.username === 'guest' ? (
           <p className='login-message'>Please log in here</p>

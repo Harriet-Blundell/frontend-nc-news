@@ -20,6 +20,24 @@
   margin-top: 2px;
 }
 
+.users-link {
+  color: whitesmoke;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.userIcon {
+  width: 24%;
+  margin-right: 10px;
+  filter: invert(100%);
+  margin-top: 2px;
+  margin-bottom: -10px;
+}
+
+.users-link:hover {
+  font-weight: bold;
+}
+
 .home-link:hover {
   font-weight: bold;
 }
@@ -76,8 +94,9 @@ li {
   .home-link {
     color: whitesmoke;
     text-decoration: none;
-    margin-right: 35px;
-    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 0;
+    font-size: 10px;
   }
 
   .topicIcon {
@@ -88,8 +107,8 @@ li {
   .topic-link {
     color: whitesmoke;
     text-decoration: none;
-    margin-right: 25px;
-    font-size: 20px;
+    margin-right: 10px;
+    font-size: 10px;
   }
 
   .articleIcon {
@@ -100,7 +119,19 @@ li {
   .articles-link {
     color: whitesmoke;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 10px;
+  }
+
+  .users-link {
+    color: whitesmoke;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 10px;
+  }
+
+  .userIcon {
+    width: 50%;
+    filter: invert(100%);
   }
 
   .navigationBar {
@@ -126,6 +157,10 @@ li {
   }
 
   .article-li {
+    margin: 0;
+  }
+
+  .users-li {
     margin: 0;
   }
 }

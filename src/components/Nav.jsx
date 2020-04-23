@@ -36,6 +36,16 @@ const Nav = () => {
             ARTICLES
           </Link>
         </li>
+        <li className='user-li'>
+          <Link to='/users' className='users-link'>
+            <img
+              src='https://image.flaticon.com/icons/svg/615/615075.svg'
+              alt='user icon'
+              className='userIcon'
+            />
+            USERS
+          </Link>
+        </li>
       </div>
     </nav>
   )
