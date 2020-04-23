@@ -60,3 +60,36 @@
 .currentUser {
   margin-bottom: 5px;
 }
+
+@media screen and (max-width: 414px) {
+  .headerContainer {
+    background-color: #202829;
+    display: grid;
+    width: 414px;
+    grid-template-areas:
+      'title title'
+      'logIn';
+  }
+
+  .currentUser {
+    font-size: 11px;
+  }
+
+  .userButton {
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: right;
+    position: absolute;
+    right: 0;
+  }
+
+  .userDiv {
+    position: relative;
+  }
+
+  .userContainer {
+    margin: 0;
+    position: absolute;
+    right: 10px;
+  }
+}

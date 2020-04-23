@@ -1,31 +1,31 @@
-import React from 'react';
-import './Header.css';
+import React from 'react'
+import './Header.css'
 
-const UserLogIn = props => {
+const UserLogIn = (props) => {
   return (
-    <div>
-      <form className="userContainer">
+    <div class='userDiv'>
+      <form className='userContainer'>
         {props.username === 'guest' ? (
-          <p className="login-message">Please log in here</p>
+          <p className='login-message'>Please log in here</p>
         ) : (
-          <p className="currentUser">Currently logged in as {props.username}</p>
+          <p className='currentUser'>Currently logged in as {props.username}</p>
         )}
         USER:
-        <label htmlFor="users">
+        <label htmlFor='users'>
           <select
             onChange={props.handleChange}
-            name="username"
-            className="usersOptions"
+            name='username'
+            className='usersOptions'
           >
             <option>guest</option>
-            {props.users.map(user => {
-              return <option key={user.username}>{user.username}</option>;
+            {props.users.map((user) => {
+              return <option key={user.username}>{user.username}</option>
             })}
           </select>
         </label>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default UserLogIn;
+export default UserLogIn

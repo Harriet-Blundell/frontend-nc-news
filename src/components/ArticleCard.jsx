@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link } from '@reach/router';
-import './ArticleCard.css';
-import Voter from './Voter';
-import Delete from './Delete';
-import { formatDate } from '../utils';
+import React from 'react'
+import { Link } from '@reach/router'
+import './ArticleCard.css'
+import Voter from './Voter'
+import Delete from './Delete'
+import { formatDate } from '../utils'
 
-const ArticleCard = props => {
+const ArticleCard = (props) => {
   const {
     title,
     article_id,
@@ -13,14 +13,14 @@ const ArticleCard = props => {
     author,
     created_at,
     comment_count,
-    votes
-  } = props.article;
+    votes,
+  } = props.article
 
-  const { username, deleteArticle } = props;
+  const { username, deleteArticle } = props
   return (
-    <div className="articleCard">
-      <Link to={`/articles/${article_id}`} className="articleLink">
-        <h3 className="article_card_title">{title}</h3>
+    <div className='articleCard'>
+      <Link to={`/articles/${article_id}`} className='articleLink'>
+        <h3 className='article_card_title'>{title}</h3>
       </Link>
 
       <p>
@@ -35,7 +35,7 @@ const ArticleCard = props => {
         <Delete deleteArticle={deleteArticle} articleId={article_id} />
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ArticleCard;
+export default ArticleCard

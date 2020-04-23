@@ -7,8 +7,9 @@
   display: grid;
   grid-template: 0fr / 2fr 2fr;
   color: black;
-  box-shadow: 0.1px 0.1px 3px 4px silver;
+  box-shadow: 0.1px 0.1px 3px 1px black;
   background-color: whitesmoke;
+  border-radius: 5px;
 }
 
 .article_title {
@@ -55,4 +56,25 @@
 .singleArticleBody {
   margin-left: 100px;
   margin-right: 100px;
+}
+
+@media screen and (max-width: 414px) {
+  .articleCard {
+    width: 24em;
+    margin-left: -25px;
+    margin-bottom: 20px;
+    margin-top: 2.5%;
+    text-align: center;
+    display: grid;
+    grid-template: 0fr / 2fr 2fr;
+    color: black;
+    box-shadow: 0.1px 0.1px 3px 1px black;
+    background-color: whitesmoke;
+    border-radius: 5px;
+  }
+
+  .article_card_title {
+    color: #ff9900;
+    margin-left: 10px;
+  }
 }

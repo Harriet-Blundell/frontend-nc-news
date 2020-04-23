@@ -26,13 +26,6 @@
   grid-area: mainContent;
 }
 
-@media only screen and (max-width: 600px) {
-  .App {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 .mostPopularTitle {
   padding-top: 20px;
   color: black;
@@ -42,4 +35,20 @@
 
 .articleListContainer {
   list-style: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .mostPopularTitle {
+    padding-top: 20px;
+    color: black;
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
 }
