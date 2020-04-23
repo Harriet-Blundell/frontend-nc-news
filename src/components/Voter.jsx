@@ -1,65 +1,67 @@
-import React, { Component } from 'react';
-import './Voter.css';
-import { patchVote } from '../api';
+import React, { Component } from 'react'
+import './Voter.css'
+import { patchVote } from '../api'
 
 class Vote extends Component {
   state = {
-    voteModifier: 0
-  };
+    voteModifier: 0,
+  }
 
   handleUpVote = (id, type) => {
     patchVote(id, 1, type).then(() => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         return {
-          voteModifier: prevState.voteModifier + 1
-        };
-      });
-    });
-  };
+          voteModifier: prevState.voteModifier + 1,
+        }
+      })
+    })
+  }
 
   handleDownVote = (id, type) => {
     patchVote(id, -1, type).then(() => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         return {
-          voteModifier: prevState.voteModifier - 1
-        };
-      });
-    });
-  };
+          voteModifier: prevState.voteModifier - 1,
+        }
+      })
+    })
+  }
 
   render() {
-    const { id, currentVote, type } = this.props;
-    const { voteModifier } = this.state;
+    const { id, currentVote, type } = this.props
+    const { voteModifier } = this.state
     return (
-      <div className="voteContainer">
+      <div className='voteContainer'>
         <button
+          className='upVoteBtn'
           disabled={this.state.voteModifier === 1}
           onClick={() => {
-            this.handleUpVote(id, type);
+            this.handleUpVote(id, type)
           }}
         >
           <img
-            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/softbank/145/upwards-black-arrow_2b06.png"
-            alt="up vote button"
-            className="upVoteButton"
+            src='https://cdn2.iconfinder.com/data/icons/drf/PNG/up_alt.png'
+            alt='up vote button'
+            className='upVoteImg'
           />
         </button>{' '}
         {currentVote + voteModifier}{' '}
         <button
+          className='downVoteBtn'
           disabled={this.state.voteModifier === -1}
           onClick={() => {
-            this.handleDownVote(id, type);
+            this.handleDownVote(id, type)
           }}
         >
           <img
-            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/softbank/145/upwards-black-arrow_2b06.png"
-            alt="down vote button"
-            className="downVoteButton"
+            src='https://cdn2.iconfinder.com/data/icons/32pxmania/misc_28.png'
+            alt='down vote button'
+            className='downVoteImg'
           />
         </button>
       </div>
-    );
+    )
   }
 }
 
-export default Vote;
+export default Vote
