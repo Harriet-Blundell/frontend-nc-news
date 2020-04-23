@@ -12,3 +12,9 @@
 .orderContainer {
   float: left;
 }
+
+@media screen and (max-width: 414px) {
+  .orderContainer {
+    margin-left: 100px;
+  }
+}

@@ -18,3 +18,9 @@
 .sortContainer {
   float: left;
 }
+
+@media screen and (max-width: 414px) {
+  .sortContainer {
+    margin-left: -5px;
+  }
+}

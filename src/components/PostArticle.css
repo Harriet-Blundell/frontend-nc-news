@@ -114,3 +114,48 @@ textarea {
 .togglePost:hover {
   background-color: rgb(150, 30, 30);
 }
+
+@media screen and (max-width: 414px) {
+  .toggleContainer {
+    margin-left: 20px;
+  }
+
+  .togglePost {
+    margin: 5px 5px;
+  }
+
+  .articleSubmit {
+    margin-right: 80px;
+  }
+
+  .newDescription {
+    margin-right: 0;
+    margin-left: -5px;
+  }
+
+  .descriptionInput {
+    margin-left: 5px;
+    max-height: 100px;
+    max-width: 92%;
+  }
+
+  .titleAndTopicContainer {
+    margin-left: -110px;
+  }
+
+  .topicContainer {
+    margin-right: -30px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  textarea {
+    margin-left: 10px;
+    max-height: 100px;
+    max-width: 100%;
+  }
+
+  .articleSubmit {
+    margin-right: 40px;
+  }
+}

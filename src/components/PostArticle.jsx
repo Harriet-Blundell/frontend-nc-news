@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { fetchAllTopics } from '../api';
-import './PostArticle.css';
+import React, { Component } from 'react'
+import { fetchAllTopics } from '../api'
+import './PostArticle.css'
 
 class PostedArticle extends Component {
   state = {
@@ -8,34 +8,34 @@ class PostedArticle extends Component {
     title: '',
     topics: [],
     topic: '',
-    body: ''
-  };
+    body: '',
+  }
 
   componentDidMount() {
     fetchAllTopics().then(({ topics }) => {
       this.setState({
         topics: topics,
-        isLoading: false
-      });
-    });
+        isLoading: false,
+      })
+    })
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
-    const { author, title, topic, body } = this.state;
-    const { postNewArticle } = this.props;
-    postNewArticle({ author, title, topic, body });
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const { author, title, topic, body } = this.state
+    const { postNewArticle } = this.props
+    postNewArticle({ author, title, topic, body })
     this.setState({
       title: '',
-      body: ''
-    });
-  };
+      body: '',
+    })
+  }
 
   handleChange = (text, key) => {
     this.setState({
-      [key]: text
-    });
-  };
+      [key]: text,
+    })
+  }
 
   componentDidUpdate(prevProp, prevState) {
     if (
@@ -44,40 +44,40 @@ class PostedArticle extends Component {
     ) {
       this.setState({
         author: this.props.username,
-        topic: this.state.topic
-      });
+        topic: this.state.topic,
+      })
     }
   }
 
   render() {
-    const { topics } = this.state;
+    const { topics } = this.state
     return (
-      <div className="postTopicContainer">
-        <form onSubmit={this.handleSubmit} className="formContainer">
-          <div className="titleAndTopicContainer">
-            <p>
-              <label htmlFor="title" className="newArticleTitle">
+      <div className='postTopicContainer'>
+        <form onSubmit={this.handleSubmit} className='formContainer'>
+          <div className='titleAndTopicContainer'>
+            <p className='topicContainer'>
+              <label htmlFor='title' className='newArticleTitle'>
                 Title:
               </label>
               <input
-                className="titleBox"
-                type="text"
-                id="title"
-                placeholder="Enter a title"
+                className='titleBox'
+                type='text'
+                id='title'
+                placeholder='Enter a title'
                 value={this.state.title}
-                onChange={event =>
+                onChange={(event) =>
                   this.handleChange(event.target.value, 'title')
                 }
                 required
               />
             </p>
             <p>
-              <label htmlFor="topics" className="newTopic">
+              <label htmlFor='topics' className='newTopic'>
                 Topic:
               </label>
               <select
-                className="topicSelect"
-                onChange={event =>
+                className='topicSelect'
+                onChange={(event) =>
                   this.handleChange(event.target.value, 'topic')
                 }
               >
@@ -85,32 +85,33 @@ class PostedArticle extends Component {
                   Choose
                 </option>
                 {topics.map((topic, index) => {
-                  return <option key={index}>{topic.slug}</option>;
+                  return <option key={index}>{topic.slug}</option>
                 })}
               </select>
             </p>
           </div>
           <br />
-          <label htmlFor="body" className="newDescription">
+          <label htmlFor='body' className='newDescription'>
             Description:
           </label>
           <br />
           <textarea
-            rows="7"
-            cols="50"
-            placeholder="Enter description here"
-            onChange={event => {
-              this.handleChange(event.target.value, 'body');
+            className='descriptionInput'
+            rows='7'
+            cols='50'
+            placeholder='Enter description here'
+            onChange={(event) => {
+              this.handleChange(event.target.value, 'body')
             }}
             value={this.state.body}
             required
           ></textarea>
           <br />
-          <button className="articleSubmit">SUBMIT</button>
+          <button className='articleSubmit'>SUBMIT</button>
         </form>
       </div>
-    );
+    )
   }
 }
 
-export default PostedArticle;
+export default PostedArticle

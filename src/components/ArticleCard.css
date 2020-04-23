@@ -59,6 +59,18 @@
 }
 
 @media screen and (max-width: 414px) {
+  .singleArticleById {
+    width: 25em;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 20px;
+    text-align: center;
+    display: grid;
+    color: black;
+    box-shadow: 0.1px 0.1px 3px 4px silver;
+    background-color: whitesmoke;
+  }
+
   .articleCard {
     width: 24em;
     margin-left: -25px;
@@ -76,5 +88,19 @@
   .article_card_title {
     color: #ff9900;
     margin-left: 10px;
+  }
+
+  .addArticleMsg {
+    font-size: 20px;
+    margin-right: 100px;
+    margin-left: 100px;
+  }
+
+  .article_title {
+    text-align: center;
+    margin-left: 170px;
+    margin-right: 170px;
+    padding: 0;
+    margin-bottom: -10px;
   }
 }

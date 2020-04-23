@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { fetchAllArticles } from '../api';
-import ArticleCard from './ArticleCard';
-import './ArticleCard.css';
-import SortBy from './SortBy';
-import Order from './Order';
-import { deleteArticleById, postArticle } from '../api';
-import PostArticle from './PostArticle';
-import Toggler from './Toggler';
-import ErrorPage from './ErrorPage';
+import React, { Component } from 'react'
+import { fetchAllArticles } from '../api'
+import ArticleCard from './ArticleCard'
+import './ArticleCard.css'
+import SortBy from './SortBy'
+import Order from './Order'
+import { deleteArticleById, postArticle } from '../api'
+import PostArticle from './PostArticle'
+import Toggler from './Toggler'
+import ErrorPage from './ErrorPage'
 
 class ArticlesList extends Component {
   state = {
@@ -15,35 +15,35 @@ class ArticlesList extends Component {
     sort_by: '',
     order: '',
     isLoading: true,
-    error: null
-  };
+    error: null,
+  }
 
   componentDidMount() {
     fetchAllArticles({
       topic: this.props.slug,
       sort_by: this.state.sort_by,
-      order: this.state.order
+      order: this.state.order,
     })
       .then(({ articles }) => {
         this.setState({
           articles: articles,
-          isLoading: false
-        });
+          isLoading: false,
+        })
       })
-      .catch(err => {
+      .catch((err) => {
         this.setState({
           error: { msg: err.response.data.msg, status: err.response.status },
-          isLoading: false
-        });
-      });
+          isLoading: false,
+        })
+      })
   }
 
-  handleChange = event => {
-    const { name, value } = event.target;
+  handleChange = (event) => {
+    const { name, value } = event.target
     this.setState({
-      [name]: value
-    });
-  };
+      [name]: value,
+    })
+  }
 
   componentDidUpdate(prevProp, prevState) {
     if (
@@ -53,49 +53,49 @@ class ArticlesList extends Component {
       fetchAllArticles({
         topic: this.props.slug,
         sort_by: this.state.sort_by,
-        order: this.state.order
+        order: this.state.order,
       }).then(({ articles }) => {
         this.setState({
           articles: articles,
-          isLoading: false
-        });
-      });
+          isLoading: false,
+        })
+      })
     }
   }
 
-  deleteArticle = articleId => {
+  deleteArticle = (articleId) => {
     deleteArticleById(articleId).then(() => {
-      this.setState(prevState => {
-        const filteredArticles = prevState.articles.filter(article => {
-          return article.article_id !== articleId;
-        });
+      this.setState((prevState) => {
+        const filteredArticles = prevState.articles.filter((article) => {
+          return article.article_id !== articleId
+        })
         return {
-          articles: filteredArticles
-        };
-      });
-    });
-  };
+          articles: filteredArticles,
+        }
+      })
+    })
+  }
 
-  postNewArticle = newArticle => {
+  postNewArticle = (newArticle) => {
     postArticle(newArticle).then(({ article }) => {
-      this.setState(currentState => {
+      this.setState((currentState) => {
         return {
           articles: [article[0], ...currentState.articles],
-          isLoading: false
-        };
-      });
-    });
-  };
+          isLoading: false,
+        }
+      })
+    })
+  }
 
   render() {
-    const { articles, isLoading, error } = this.state;
+    const { articles, isLoading, error } = this.state
 
     if (isLoading) {
-      return <p>Loading articles...</p>;
+      return <p>Loading articles...</p>
     }
 
     if (error) {
-      return <ErrorPage error={error} />;
+      return <ErrorPage error={error} />
     }
 
     return (
@@ -103,9 +103,9 @@ class ArticlesList extends Component {
         <SortBy handleChange={this.handleChange} />
         <Order handleChange={this.handleChange} />
 
-        <h2 className="article_title">Articles:</h2>
+        <h2 className='article_title'>Articles</h2>
         {this.props.username === 'guest' ? (
-          <p className="addArticleMsg">
+          <p className='addArticleMsg'>
             If you want to add a new article, please log in.
           </p>
         ) : (
@@ -117,21 +117,21 @@ class ArticlesList extends Component {
           </Toggler>
         )}
         <ul>
-          {articles.map(article => {
+          {articles.map((article) => {
             return (
-              <li key={article.article_id} className="article_list">
+              <li key={article.article_id} className='article_list'>
                 <ArticleCard
                   article={article}
                   username={this.props.username}
                   deleteArticle={this.deleteArticle}
                 />
               </li>
-            );
+            )
           })}
         </ul>
       </div>
-    );
+    )
   }
 }
 
-export default ArticlesList;
+export default ArticlesList

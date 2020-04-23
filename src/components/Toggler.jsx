@@ -1,31 +1,31 @@
-import React, { Component } from 'react';
-import './PostArticle.css';
+import React, { Component } from 'react'
+import './PostArticle.css'
 
 class Toggler extends Component {
   state = {
-    showToggle: false
-  };
+    showToggle: false,
+  }
 
   handleClick = () => {
-    this.setState(currentState => {
+    this.setState((currentState) => {
       return {
-        showToggle: !currentState.showToggle
-      };
-    });
-  };
+        showToggle: !currentState.showToggle,
+      }
+    })
+  }
 
   render() {
-    const { showToggle } = this.state;
+    const { showToggle } = this.state
 
     return (
-      <div>
-        <button onClick={this.handleClick} className="togglePost">
+      <div className='toggleContainer'>
+        <button onClick={this.handleClick} className='togglePost'>
           {showToggle ? 'HIDE ARTICLE FORM' : 'CREATE A NEW ARTICLE'}
         </button>
         {showToggle && this.props.children}
       </div>
-    );
+    )
   }
 }
 
-export default Toggler;
+export default Toggler
