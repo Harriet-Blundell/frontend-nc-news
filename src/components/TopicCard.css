@@ -8,15 +8,20 @@
   padding: 0;
   margin: auto;
   width: 350px;
-  height: 150px;
+  height: 190px;
   color: black;
-  box-shadow: 0.1px 0.1px 3px 4px silver;
+  box-shadow: 0.1px 0.1px 3px 1px black;
   background-color: whitesmoke;
+  border-radius: 5px;
 }
 
 .topics_title {
   color: black;
   text-align: center;
+}
+
+.topicName {
+  font-size: 25px;
 }
 
 .topicLink {
@@ -68,8 +73,25 @@ input[type='text'] {
   text-decoration: none;
   margin: 10px 20px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .submitTopicButton:hover {
   background-color: rgb(150, 30, 30);
+}
+
+@media screen and (max-width: 414px) {
+  .addTopicTitle {
+    margin-left: 5px;
+  }
+
+  .addDescription {
+    margin-left: 10px;
+  }
+
+  input[type='text'] {
+    padding: 10px 10px;
+    margin: 8px 100px;
+    box-sizing: border-box;
+  }
 }

@@ -1,50 +1,50 @@
-import React, { Component } from 'react';
-import { fetchAllArticles } from '../api';
-import ArticleCard from './ArticleCard';
+import React, { Component } from 'react'
+import { fetchAllArticles } from '../api'
+import ArticleCard from './ArticleCard'
 
 class MostPopularArticles extends Component {
   state = {
     popularArticles: [],
-    isLoading: true
-  };
+    isLoading: true,
+  }
 
   componentDidMount() {
     return fetchAllArticles({ sort_by: 'comment_count' }).then(
       ({ articles }) => {
-        const highestArticleComments = articles.filter(article => {
-          return article.comment_count > 10;
-        });
+        const highestArticleComments = articles.filter((article) => {
+          return article.comment_count > 10
+        })
 
         this.setState({
           popularArticles: highestArticleComments,
-          isLoading: false
-        });
+          isLoading: false,
+        })
       }
-    );
+    )
   }
 
   render() {
-    const { popularArticles, isLoading } = this.state;
+    const { popularArticles, isLoading } = this.state
 
     if (isLoading) {
-      return <p>Loading Home Page...</p>;
+      return <p>Loading Home Page...</p>
     }
 
     return (
       <div>
-        <h2 className="mostPopularTitle">Most Popular Articles: </h2>
+        <h2 className='mostPopularTitle'>Most Popular Articles</h2>
         <ul>
-          {popularArticles.map(article => {
+          {popularArticles.map((article) => {
             return (
-              <li key={article.article_id} className="articleListContainer">
+              <li key={article.article_id} className='articleListContainer'>
                 <ArticleCard article={article} />
               </li>
-            );
+            )
           })}
         </ul>
       </div>
-    );
+    )
   }
 }
 
-export default MostPopularArticles;
+export default MostPopularArticles
