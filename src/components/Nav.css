@@ -27,11 +27,12 @@
 }
 
 .userIcon {
-  width: 24%;
-  margin-right: 10px;
+  width: 27.4%;
+  margin-left: 5.5px;
+  margin-right: 8px;
   filter: invert(100%);
   margin-top: 2px;
-  margin-bottom: -10px;
+  margin-bottom: -5px;
 }
 
 .users-link:hover {
@@ -85,53 +86,33 @@ li {
 }
 
 @media only screen and (max-width: 414px) {
-  .homeIcon {
-    width: 10%;
-    filter: invert(100%);
-    margin-top: 2px;
-  }
-
   .home-link {
     color: whitesmoke;
     text-decoration: none;
     margin-right: 10px;
     margin-left: 0;
-    font-size: 10px;
-  }
-
-  .topicIcon {
-    width: 10%;
-    filter: invert(100%);
+    font-size: 15px;
   }
 
   .topic-link {
     color: whitesmoke;
     text-decoration: none;
-    margin-right: 10px;
-    font-size: 10px;
-  }
-
-  .articleIcon {
-    width: 10%;
-    filter: invert(100%);
+    margin-right: 20px;
+    font-size: 15px;
   }
 
   .articles-link {
     color: whitesmoke;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 15px;
+    margin-left: -10px;
   }
 
   .users-link {
     color: whitesmoke;
     text-decoration: none;
     margin-right: 10px;
-    font-size: 10px;
-  }
-
-  .userIcon {
-    width: 50%;
-    filter: invert(100%);
+    font-size: 15px;
   }
 
   .navigationBar {
@@ -146,6 +127,15 @@ li {
 
   .navigationContainer {
     display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .navigationBar > div {
+    margin-bottom: -30px;
+  }
+
+  .navigationContainer > div {
+    width: 100px;
   }
 
   .home-li {

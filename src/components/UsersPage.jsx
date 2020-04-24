@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from '@reach/router'
+import './UsersPage.css'
 
 const UsersList = (props) => {
   const { users } = props
@@ -11,8 +12,9 @@ const UsersList = (props) => {
         {users.map((user, index) => {
           return (
             <li key={index}>
-              Username:
-              <Link to={`/articles/${user.username}`}>{user.username}</Link>
+              <Link to={`/articles/users/${user.username}`}>
+                {user.username}
+              </Link>
             </li>
           )
         })}

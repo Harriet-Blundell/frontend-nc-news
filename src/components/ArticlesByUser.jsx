@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { fetchAllArticles } from '../api'
 import ArticleCard from './ArticleCard'
+import { Link } from '@reach/router'
 
 class ArticleByUser extends Component {
   state = {
@@ -24,10 +25,12 @@ class ArticleByUser extends Component {
       return <p>Loading {this.props.username}'s articles</p>
     }
 
-    console.log(articlesByUser, 'in articles by user')
-
     return (
       <div>
+        <h1>Articles by {this.props.username}</h1>
+        <button>
+          <Link to='/users'>Go Back</Link>
+        </button>
         <ul>
           {articlesByUser.map((article) => {
             return (

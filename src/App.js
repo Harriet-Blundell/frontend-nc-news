@@ -36,7 +36,7 @@ class App extends React.Component {
           />
           <TopicsList path='/topics' username={this.state.username} />
           <ArticlesByUser
-            path='/articles/:username'
+            path='/articles/users/:username'
             username={this.state.username}
           />
           <ArticlesList path='/topics/:slug' />
