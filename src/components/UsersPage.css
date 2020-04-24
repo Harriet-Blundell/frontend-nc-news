@@ -1,0 +1,68 @@
+.usersListContainer {
+  margin-right: 35px;
+}
+
+.individualUser {
+  box-shadow: 0.1px 0.1px 7px 3px rgb(168, 167, 167);
+  background-color: #202829;
+  border-radius: 5px;
+  max-width: 500px;
+  margin-left: 345px;
+}
+
+.username-link {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.username-link:hover {
+  color: #ff9900;
+}
+
+.backBtn {
+  background-color: #202829;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  padding: 13px 25px;
+  text-decoration: none;
+  margin: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.deleteBtn {
+  background-color: #202829;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  padding: 5px 25px;
+  text-decoration: none;
+  margin: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.backBtnLink {
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 414px) {
+  .usersListContainer {
+    margin-right: 35px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .individualUser {
+    box-shadow: 0.1px 0.1px 7px 3px rgb(168, 167, 167);
+    background-color: #202829;
+    width: 335px;
+    margin: 30px 40px;
+    border-radius: 5px;
+  }
+}

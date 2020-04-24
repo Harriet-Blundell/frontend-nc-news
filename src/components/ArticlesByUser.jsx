@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { fetchAllArticles } from '../api'
 import ArticleCard from './ArticleCard'
 import { Link } from '@reach/router'
+import './UsersPage.css'
 
 class ArticleByUser extends Component {
   state = {
@@ -28,8 +29,10 @@ class ArticleByUser extends Component {
     return (
       <div>
         <h1>Articles by {this.props.username}</h1>
-        <button>
-          <Link to='/users'>Go Back</Link>
+        <button className='backBtn'>
+          <Link to='/users' className='backBtnLink'>
+            Go Back
+          </Link>
         </button>
         <ul>
           {articlesByUser.map((article) => {

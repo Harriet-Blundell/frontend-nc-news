@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './PostArticle.css'
 
 class PostedComment extends Component {
   state = {
@@ -37,7 +38,7 @@ class PostedComment extends Component {
             required
           ></textarea>
           <br />
-          <button>Submit</button>
+          <button className='postCommentBtn'>Submit</button>
         </form>
       </div>
     )

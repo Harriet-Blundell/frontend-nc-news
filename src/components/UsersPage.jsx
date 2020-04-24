@@ -6,13 +6,16 @@ const UsersList = (props) => {
   const { users } = props
 
   return (
-    <div>
-      <h1>Users:</h1>
-      <ul>
+    <div className='usersDiv'>
+      <h1>Users</h1>
+      <ul className='usersListContainer'>
         {users.map((user, index) => {
           return (
-            <li key={index}>
-              <Link to={`/articles/users/${user.username}`}>
+            <li key={index} className='individualUser'>
+              <Link
+                to={`/articles/users/${user.username}`}
+                className='username-link'
+              >
                 {user.username}
               </Link>
             </li>

@@ -1,22 +1,23 @@
-import React from 'react';
+import React from 'react'
 
-const Delete = props => {
-  const { deleteArticle, articleId, deleteComment, commentId } = props;
+const Delete = (props) => {
+  const { deleteArticle, articleId, deleteComment, commentId } = props
   return (
     <div>
       <button
         onClick={() => {
           if (articleId) {
-            deleteArticle(articleId);
+            deleteArticle(articleId)
           } else if (commentId) {
-            deleteComment(commentId);
+            deleteComment(commentId)
           }
         }}
+        className='deleteBtn'
       >
         Delete
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default Delete;
+export default Delete
