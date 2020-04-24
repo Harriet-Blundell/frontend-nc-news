@@ -10,6 +10,7 @@ import ArticlesList from './components/ArticlesList'
 import SingleArticle from './components/SingleArticle'
 import ErrorPage from './components/ErrorPage'
 import UsersList from './components/UsersPage'
+import ArticlesByUser from './components/ArticlesByUser'
 
 class App extends React.Component {
   state = {
@@ -28,9 +29,16 @@ class App extends React.Component {
         <Nav />
         <Router className='routeDiv'>
           <Home path='/' />
-          <UsersList path='/users' users={this.state.users} />
+          <UsersList
+            path='/users'
+            users={this.state.users}
+            username={this.state.username}
+          />
           <TopicsList path='/topics' username={this.state.username} />
-          <ArticlesList path='/articles/:username' />
+          <ArticlesByUser
+            path='/articles/:username'
+            username={this.state.username}
+          />
           <ArticlesList path='/topics/:slug' />
           <ArticlesList path='/articles' username={this.state.username} />
           <SingleArticle path='/articles/:id' username={this.state.username} />

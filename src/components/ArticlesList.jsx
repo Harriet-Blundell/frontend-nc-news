@@ -21,7 +21,6 @@ class ArticlesList extends Component {
   componentDidMount() {
     fetchAllArticles({
       topic: this.props.slug,
-      author: this.props.username,
       sort_by: this.state.sort_by,
       order: this.state.order,
     })
@@ -53,7 +52,6 @@ class ArticlesList extends Component {
     ) {
       fetchAllArticles({
         topic: this.props.slug,
-        author: this.props.username,
         sort_by: this.state.sort_by,
         order: this.state.order,
       }).then(({ articles }) => {
