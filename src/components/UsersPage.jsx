@@ -7,7 +7,7 @@ const UsersList = (props) => {
 
   return (
     <div className='usersDiv'>
-      <h1>Users</h1>
+      <h1 className='userTitle'>Users</h1>
       <ul className='usersListContainer'>
         {users.map((user, index) => {
           return (

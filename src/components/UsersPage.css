@@ -1,5 +1,5 @@
-.usersListContainer {
-  margin-right: 35px;
+.usersDiv {
+  display: grid;
 }
 
 .individualUser {
@@ -7,7 +7,8 @@
   background-color: #202829;
   border-radius: 5px;
   max-width: 500px;
-  margin-left: 345px;
+  margin-left: 560px;
+  margin0right: 560px;
 }
 
 .username-link {
