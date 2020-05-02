@@ -29,11 +29,9 @@ class ArticleByUser extends Component {
     return (
       <div>
         <h1>Articles by {this.props.username}</h1>
-        <button className='backBtn'>
-          <Link to='/users' className='backBtnLink'>
-            Go Back
-          </Link>
-        </button>
+        <Link to='/users' className='backBtnLink'>
+          <button className='backBtn'>Go Back</button>
+        </Link>
         <ul>
           {articlesByUser.map((article) => {
             return (
