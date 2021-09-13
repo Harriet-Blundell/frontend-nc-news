@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { fetchAllTopics } from '../api';
-import TopicCard from './TopicCard';
-import './TopicCard.css';
-import { postTopic } from '../api';
-import PostTopic from './PostTopic';
-import ErrorPage from './ErrorPage';
+import React, { Component } from "react";
+import { fetchAllTopics } from "../api";
+import TopicCard from "./TopicCard";
+import "./TopicCard.css";
+import { postTopic } from "../api";
+import PostTopic from "./PostTopic";
+import ErrorPage from "./ErrorPage";
 
 class TopicsList extends Component {
   state = {
     topics: [],
     isLoading: true,
-    error: null
+    error: null,
   };
 
   componentDidMount() {
@@ -18,22 +18,22 @@ class TopicsList extends Component {
       .then(({ topics }) => {
         this.setState({
           topics: topics,
-          isLoading: false
+          isLoading: false,
         });
       })
-      .catch(err => {
+      .catch((err) => {
         this.setState({
           error: err.response,
-          isLoading: false
+          isLoading: false,
         });
       });
   }
 
-  postedTopic = newTopic => {
+  postedTopic = (newTopic) => {
     postTopic(newTopic).then(({ topic }) => {
-      this.setState(currentState => {
+      this.setState((currentState) => {
         return {
-          topics: [topic[0], ...currentState.topics]
+          topics: [topic[0], ...currentState.topics],
         };
       });
     });
@@ -52,7 +52,7 @@ class TopicsList extends Component {
 
     return (
       <div>
-        {this.props.username === 'guest' ? (
+        {this.props.username === "guest" ? (
           <p className="addTopicMsg">
             If you want to add a new topic, please log in.
           </p>
